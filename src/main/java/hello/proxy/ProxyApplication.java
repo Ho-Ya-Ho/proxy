@@ -4,6 +4,10 @@ import hello.proxy.config.AppV1Config;
 import hello.proxy.config.AppV2Config;
 import hello.proxy.config.v1_proxy.ConcreteProxyConfig;
 import hello.proxy.config.v1_proxy.InterfaceProxyConfig;
+import hello.proxy.config.v2_dynamicproxy.DynamicProxyBasicConfig;
+import hello.proxy.config.v2_dynamicproxy.DynamicProxyFilterConfig;
+import hello.proxy.config.v3_proxyfactory.ProxyFactoryConfigV1;
+import hello.proxy.config.v3_proxyfactory.ProxyFactoryConfigV2;
 import hello.proxy.trace.logtrace.LogTrace;
 import hello.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 
-@Import(ConcreteProxyConfig.class) //Config를 여러개 만들어서 원하는 것들만 Spring Container에 올리기위해서
+@Import(ProxyFactoryConfigV2.class) //Config를 여러개 만들어서 원하는 것들만 Spring Container에 올리기위해서
 @SpringBootApplication(scanBasePackages = "hello.proxy.app") //주의 -해당 경로 아래의 파일들만 ComponentScan의 대상이 된다.-
 public class ProxyApplication {
 

@@ -24,6 +24,6 @@ public class TimeInvocationHandler implements InvocationHandler {
         long endTime = System.currentTimeMillis();
         long resultTime = endTime = startTime;
         log.info("resultTime: {}", resultTime);
-        return null;
+        return result;
     }
 }
